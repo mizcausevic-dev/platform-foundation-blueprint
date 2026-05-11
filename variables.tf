@@ -3,6 +3,12 @@ variable "environment" {
   description = "Deployment environment name."
 }
 
+variable "offline_mode" {
+  type        = bool
+  description = "Allows local planning without real AWS credentials."
+  default     = true
+}
+
 variable "aws_region" {
   type        = string
   description = "AWS region for the foundation."

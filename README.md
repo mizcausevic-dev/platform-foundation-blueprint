@@ -58,6 +58,8 @@ terraform init
 terraform plan -var-file="environments/dev.tfvars"
 ```
 
+By default, this repo uses `offline_mode=true`, which allows local planning without real AWS credentials. That keeps the blueprint easy to inspect on a workstation before you wire it to a live account.
+
 ## Screenshots
 
 ### Hero
@@ -74,12 +76,18 @@ terraform plan -var-file="environments/dev.tfvars"
 
 ## Local Run
 
-Terraform is not installed in this environment yet, so this repo is currently delivered as a ready-to-plan blueprint. Once Terraform is available:
+For local proof and structure review:
 
 ```powershell
 Set-Location "C:\Users\chaus\dev\repos\platform-foundation-blueprint"
 terraform init
 terraform plan -var-file="environments/dev.tfvars"
+```
+
+For a real deployment-backed plan, turn off offline mode and use valid AWS credentials:
+
+```powershell
+terraform plan -var-file="environments/dev.tfvars" -var="offline_mode=false"
 ```
 
 ## Tech Stack
