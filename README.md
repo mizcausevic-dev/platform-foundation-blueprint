@@ -40,7 +40,7 @@ flowchart LR
   E --> H["Logs and 5xx alarm"]
 ```
 
-Additional detail lives in [C:\Users\chaus\dev\repos\platform-foundation-blueprint\docs\architecture.md](/C:/Users/chaus/dev/repos/platform-foundation-blueprint/docs/architecture.md).
+Additional detail lives in [docs/architecture.md](./docs/architecture.md).
 
 ## Module Layout
 
@@ -53,7 +53,7 @@ Additional detail lives in [C:\Users\chaus\dev\repos\platform-foundation-bluepri
 ## Example Plan Flow
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\platform-foundation-blueprint"
+cd platform-foundation-blueprint
 terraform init
 terraform plan -var-file="environments/dev.tfvars"
 ```
@@ -79,7 +79,7 @@ By default, this repo uses `offline_mode=true`, which allows local planning with
 For local proof and structure review:
 
 ```powershell
-Set-Location "C:\Users\chaus\dev\repos\platform-foundation-blueprint"
+cd platform-foundation-blueprint
 terraform init
 terraform plan -var-file="environments/dev.tfvars"
 ```
